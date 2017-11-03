@@ -1,25 +1,25 @@
-[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/somelib%3Abincrafters/images/download.svg?version=2.9.1%3Astable) ](https://bintray.com/bincrafters/public-conan/somelib%3Abincrafters/2.9.1%3Astable/link)
-[![Build Status](https://travis-ci.org/bincrafters/conan-somelib.svg?branch=stable%2F2.9.1)](https://travis-ci.org/bincrafters/conan-somelib)
-[![Build status](https://ci.appveyor.com/api/projects/status/a5snyovachh6e8nh?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-somelib)
+[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/gyp_installer%3Abincrafters/images/download.svg?version=20171101%3Astable) ](https://bintray.com/bincrafters/public-conan/gyp_installer%3Abincrafters/20171101%3Astable/link)
+[![Build Status](https://travis-ci.org/SSE4/conan-gyp_installer.svg?branch=testing%2F20171101)](https://travis-ci.org/SSE4/conan-gyp_installer)
+[![Build status](https://ci.appveyor.com/api/projects/status/4n738rjs3ske66d3?svg=true)](https://ci.appveyor.com/project/SSE4/conan-gyp-installer)
 
-Brief statement describing somelib
+GYP (Generate Your Projects) is a Meta-Build system: a build system that generates other build systems.
 
-[Conan.io](https://conan.io) package for [somelib](https://github.com/someauthor/somelib) project
+[Conan.io](https://conan.io) package for [gyp](https://gyp.gsrc.io/) project
 
-The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/somelib%3Abincrafters).
+The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/gyp_installer%3Abincrafters).
 
 ## For Users: Use this package
 
 ### Basic setup
 
-    $ conan install somelib/0.0.0@bincrafters/stable
+    $ conan install gyp_installer/20171101@bincrafters/stable
 
 ### Project setup
 
 If you handle multiple dependencies in your project is better to add a *conanfile.txt*
 
     [requires]
-    somelib/0.0.0@bincrafters/stable
+    gyp_installer/20171101@bincrafters/stable
 
     [generators]
     txt
@@ -46,7 +46,7 @@ The following command both runs all the steps of the conan file, and publishes t
 
 ## Upload
 
-    $ conan upload somelib/0.0.0@bincrafters/stable --all -r bincrafters
+    $ conan upload gyp_installer/20171101@@bincrafters/stable --all -r bincrafters
 
 ### License
-[LICENSE_TYPE](https://github.com/someauthor/somelib/blob/master/LICENSE)
+[BSD](https://chromium.googlesource.com/external/gyp/+/master/LICENSE)

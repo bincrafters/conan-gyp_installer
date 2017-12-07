@@ -5,7 +5,7 @@ from conans import ConanFile
 import os
 
 
-class LibnameConan(ConanFile):
+class GypinstallerConan(ConanFile):
     name = "gyp_installer"
     version = "20171101"
     url = "https://github.com/bincrafters/conan-gyp_installer"

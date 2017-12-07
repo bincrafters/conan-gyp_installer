@@ -1,6 +1,6 @@
-[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/gyp_installer%3Abincrafters/images/download.svg?version=20171101%3Astable) ](https://bintray.com/bincrafters/public-conan/gyp_installer%3Abincrafters/20171101%3Astable/link)
-[![Build Status](https://travis-ci.org/SSE4/conan-gyp_installer.svg?branch=testing%2F20171101)](https://travis-ci.org/SSE4/conan-gyp_installer)
-[![Build status](https://ci.appveyor.com/api/projects/status/4n738rjs3ske66d3?svg=true)](https://ci.appveyor.com/project/SSE4/conan-gyp-installer)
+[![Download](https://api.bintray.com/packages/bincrafters/public-conan/gyp_installer%3Abincrafters/images/download.svg)](https://bintray.com/bincrafters/public-conan/gyp_installer%3Abincrafters/_latestVersion)
+[![Build Status](https://travis-ci.org/bincrafters/conan-gyp_installer.svg?branch=stable%2F20171101)](https://travis-ci.org/bincrafters/conan-gyp_installer)
+[![Build status](https://ci.appveyor.com/api/projects/status/972imdjjj19mmau8?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-gyp-installer)
 
 GYP (Generate Your Projects) is a Meta-Build system: a build system that generates other build systems.
 

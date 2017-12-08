@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from conans import ConanFile
+from conans import ConanFile, tools
 import os
 
 
@@ -14,8 +14,8 @@ class GypinstallerConan(ConanFile):
     no_copy_source = True
 
     def system_requirements(self):
-        if self.settings.os == "Linux":
-            if str(tools.os_info.linux_distro) in ["ubuntu", "debian"]:
+        if tools.os_info.is_linux:
+            if tools.os_info.with_apt:
                 installer = tools.SystemPackageTool()
                 installer.install('ca-certificates')
 

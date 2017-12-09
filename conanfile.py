@@ -13,11 +13,11 @@ class GypinstallerConan(ConanFile):
     license = "https://chromium.googlesource.com/external/gyp/+/master/LICENSE"
     no_copy_source = True
 
-    def system_requirements(self):
-        if tools.os_info.is_linux:
-            if tools.os_info.with_apt:
-                installer = tools.SystemPackageTool()
-                installer.install('ca-certificates')
+    # def system_requirements(self):
+        # if tools.os_info.is_linux:
+            # if tools.os_info.with_apt:
+                # installer = tools.SystemPackageTool()
+                # installer.install('ca-certificates')
 
     def build(self):
         #self.run('git clone --depth 1 https://github.com/SSE4/gyp')

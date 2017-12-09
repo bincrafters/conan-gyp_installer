@@ -20,10 +20,12 @@ class GypinstallerConan(ConanFile):
                 installer.install('ca-certificates')
 
     def build(self):
-        self.run('git clone --depth 1 https://github.com/SSE4/gyp')
-
+        #self.run('git clone --depth 1 https://github.com/SSE4/gyp')
+        tools.get("https://github.com/SSE4/gyp/archive/master.zip")
+        os.rename("gyp-master", "sources")
+    
     def package(self):
-        self.copy(pattern='*', src='gyp', dst='bin')
+        self.copy(pattern='*', src='sources', dst='bin')
 
     def package_info(self):
         # ensure gyp is executable

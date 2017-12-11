@@ -14,9 +14,9 @@ class GypinstallerConan(ConanFile):
     no_copy_source = True
 
     def build(self):
-        tools.get("https://github.com/SSE4/gyp/archive/master.zip")
+        tools.get("https://github.com/bincrafters/gyp/archive/master.zip")
         os.rename("gyp-master", "sources")
-    
+
     def package(self):
         self.copy(pattern='*', src='sources', dst='bin')
 

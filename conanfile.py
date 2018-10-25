@@ -13,6 +13,7 @@ class GypinstallerConan(ConanFile):
     description = "GYP is a Meta-Build system: a build system that generates other build systems"
     author = "Bincrafters <bincrafters@gmail.com>"
     license = "BSD-3-Clause"
+    settings = "os_build"
     no_copy_source = True
     _source_subfolder = "source_subfolder"
 
@@ -20,7 +21,7 @@ class GypinstallerConan(ConanFile):
         if self.settings.os_build == 'Linux':
             self.requires.add('glibc_version_header/0.1@bincrafters/stable')
 
-    def build(self):
+    def source(self):
         tools.get("https://github.com/bincrafters/gyp/archive/{}.tar.gz".format(self.version))
         archive_name = "gyp-{}".format(self.version)
         os.rename(archive_name, self._source_subfolder)
@@ -29,8 +30,7 @@ class GypinstallerConan(ConanFile):
         self.copy(pattern='*', src=self._source_subfolder, dst='bin')
 
     def package_info(self):
-        # ensure gyp is executable
-        if os.name == 'posix':
+        if self.settings.os_build in ["Linux", "Macos"]:
             name = os.path.join('bin', 'gyp')
             os.chmod(name, os.stat(name).st_mode | 0o111)
         bin_dir = os.path.join(self.package_folder, 'bin')

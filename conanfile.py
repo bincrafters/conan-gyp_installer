@@ -16,6 +16,10 @@ class GypinstallerConan(ConanFile):
     no_copy_source = True
     _source_subfolder = "source_subfolder"
 
+    def requirements(self):
+        if self.settings.os_build == 'Linux':
+            self.requires.add('glibc_version_header/0.1.0@bincrafters/stable')
+
     def build(self):
         tools.get("https://github.com/bincrafters/gyp/archive/{}.tar.gz".format(self.version))
         archive_name = "gyp-{}".format(self.version)

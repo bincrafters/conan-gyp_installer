@@ -18,7 +18,7 @@ class GypinstallerConan(ConanFile):
 
     def requirements(self):
         if self.settings.os_build == 'Linux':
-            self.requires.add('glibc_version_header/0.1.0@bincrafters/stable')
+            self.requires.add('glibc_version_header/0.1@bincrafters/stable')
 
     def build(self):
         tools.get("https://github.com/bincrafters/gyp/archive/{}.tar.gz".format(self.version))

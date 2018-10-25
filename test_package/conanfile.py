@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from conans import ConanFile
-import os
 
 
 class TestPackage(ConanFile):

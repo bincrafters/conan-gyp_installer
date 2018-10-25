@@ -27,6 +27,7 @@ class GypinstallerConan(ConanFile):
         os.rename(archive_name, self._source_subfolder)
 
     def package(self):
+        self.copy(pattern="LICENSE", src=self._source_subfolder, dst="licenses")
         self.copy(pattern='*', src=self._source_subfolder, dst='bin')
 
     def package_info(self):

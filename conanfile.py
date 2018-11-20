@@ -8,14 +8,14 @@ from conans import ConanFile, tools
 
 class GypinstallerConan(ConanFile):
     name = "gyp_installer"
-    version = "20171101"
+    version = "20181120"
     url = "https://github.com/bincrafters/conan-gyp_installer"
     homepage = "https://chromium.googlesource.com/external/gyp"
     description = "GYP is a Meta-Build system: a build system that generates other build systems"
     author = "Bincrafters <bincrafters@gmail.com>"
+    topics = ("conan", "gyp", "installer", "meta-build-system", "build-system")
     license = "BSD-3-Clause"
     exports = "LICENSE"
-    exports_sources = "gyp.patch"
     no_copy_source = True
     _source_subfolder = "source_subfolder"
 
@@ -23,7 +23,6 @@ class GypinstallerConan(ConanFile):
         tools.get("https://github.com/bincrafters/gyp/archive/{}.tar.gz".format(self.version))
         archive_name = "gyp-{}".format(self.version)
         os.rename(archive_name, self._source_subfolder)
-        tools.patch(base_path=self._source_subfolder, patch_file="gyp.patch")
 
     def package(self):
         self.copy(pattern="LICENSE", src=self._source_subfolder, dst="licenses")

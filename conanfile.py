@@ -8,7 +8,7 @@ from conans import ConanFile, tools
 
 class GypinstallerConan(ConanFile):
     name = "gyp_installer"
-    version = "20181120"
+    version = "20181217"
     url = "https://github.com/bincrafters/conan-gyp_installer"
     homepage = "https://chromium.googlesource.com/external/gyp"
     description = "GYP is a Meta-Build system: a build system that generates other build systems"

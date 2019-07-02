@@ -22,7 +22,7 @@ class GypinstallerConan(ConanFile):
     def source(self):
         sha256 = "803d844e04b36caba83442e71ffb3775a04afbd8a75453eed439de5c92d041bb"
         tools.get("{}/archive/{}.tar.gz".format(self.homepage, self.version), sha256=sha256)
-        archive_name = "gyp-{}".format(self.version)
+        archive_name = "GYP-{}".format(self.version)
         os.rename(archive_name, self._source_subfolder)
 
     def package(self):

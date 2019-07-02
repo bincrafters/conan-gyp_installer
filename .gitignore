@@ -34,6 +34,15 @@ test_package/__pycache__/*
 test_package/build/*
 build/*
 *.pyc
+tmp/
+.DS_Store
 
 # IDE
 .idea/*
+.project
+.pydevproject
+.settings/*
+.ropeproject/*
+.vscode/*
+## emacs
+*~

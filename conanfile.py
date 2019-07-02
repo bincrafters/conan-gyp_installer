@@ -15,6 +15,7 @@ class GypinstallerConan(ConanFile):
     topics = ("conan", "gyp", "installer", "meta-build-system", "build-system")
     license = "BSD-3-Clause"
     exports = "LICENSE"
+    exports_sources = ["gyp", "gyp.bat"]
     no_copy_source = True
     _source_subfolder = "source_subfolder"
 
@@ -27,14 +28,20 @@ class GypinstallerConan(ConanFile):
     def package(self):
         self.copy(pattern="LICENSE", src=self._source_subfolder, dst="licenses")
         self.copy(pattern='*', src=self._source_subfolder, dst='bin')
+        self.copy(pattern='gyp', src=self.source_folder, dst=os.path.join("bin", "gyp"))
+        self.copy(pattern='gyp.bat', src=self.source_folder, dst=os.path.join("bin", "gyp"))
 
     def package_info(self):
         if platform.system() in ["Linux", "Darwin"]:
             name = os.path.join('bin', 'gyp')
             os.chmod(name, os.stat(name).st_mode | 0o111)
-        bin_dir = os.path.join(self.package_folder, 'bin')
-        self.env_info.path.append(bin_dir)
-        self.env_info.PYTHONPATH.append(os.path.join(bin_dir, 'pylib'))
+        bindir = os.path.join(self.package_folder, 'bin', 'gyp')
+        pylibdir = os.path.join(self.package_folder, 'bin')
+
+        self.output.info("Appending PATH environment variable: {}".format(bindir))
+        self.env_info.PATH.append(bindir)
+        self.output.info("Appending PYTHONPATH environment variable: {}".format(bindir))
+        self.env_info.PYTHONPATH.append(os.path.join(pylibdir))
 
     def package_id(self):
         self.info.header_only()

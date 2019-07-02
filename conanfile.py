@@ -14,7 +14,7 @@ class GypinstallerConan(ConanFile):
     author = "Bincrafters <bincrafters@gmail.com>"
     topics = ("conan", "gyp", "installer", "meta-build-system", "build-system")
     license = "BSD-3-Clause"
-    exports = "LICENSE"
+    exports = ["LICENSE.md"]
     exports_sources = ["gyp", "gyp.bat"]
     no_copy_source = True
     _source_subfolder = "source_subfolder"

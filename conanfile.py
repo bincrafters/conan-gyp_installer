@@ -33,7 +33,7 @@ class GypinstallerConan(ConanFile):
 
     def package_info(self):
         if platform.system() in ["Linux", "Darwin"]:
-            name = os.path.join('bin', 'gyp')
+            name = os.path.join('bin', 'gyp', 'gyp')
             os.chmod(name, os.stat(name).st_mode | 0o111)
         bindir = os.path.join(self.package_folder, 'bin', 'gyp')
         pylibdir = os.path.join(self.package_folder, 'bin')

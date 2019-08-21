@@ -7,7 +7,7 @@ from conans import ConanFile, tools
 
 class GypinstallerConan(ConanFile):
     name = "gyp_installer"
-    version = "20190423"
+    version = "20190821"
     url = "https://github.com/bincrafters/conan-gyp_installer"
     homepage = "https://github.com/bincrafters/gyp"
     description = "GYP is a Meta-Build system: a build system that generates other build systems"
@@ -15,11 +15,12 @@ class GypinstallerConan(ConanFile):
     topics = ("conan", "gyp", "installer", "meta-build-system", "build-system")
     license = "BSD-3-Clause"
     exports = "LICENSE"
+    exports_sources = "0001-msvc16.patch"
     no_copy_source = True
     _source_subfolder = "source_subfolder"
 
     def source(self):
-        sha256 = "5b8567e8f642c86f283c2bade2659315acb250cff59d5d95df36aa432cc9d56e"
+        sha256 = "ab3e39197ef8cfc5e0048ef45b71d2eef5620cc0451d39fa28e2488826a8e668"
         tools.get("{}/archive/{}.tar.gz".format(self.homepage, self.version), sha256=sha256)
         archive_name = "gyp-{}".format(self.version)
         os.rename(archive_name, self._source_subfolder)

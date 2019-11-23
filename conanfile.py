@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import os
 import platform
 from conans import ConanFile, tools
@@ -12,7 +10,6 @@ class GypinstallerConan(ConanFile):
     url = "https://github.com/bincrafters/conan-gyp_installer"
     homepage = "https://github.com/chromium/gyp"
     description = "GYP is a Meta-Build system: a build system that generates other build systems"
-    author = "Bincrafters <bincrafters@gmail.com>"
     topics = ("conan", "gyp", "installer", "meta-build-system", "build-system")
     license = "BSD-3-Clause"
     exports = "LICENSE"
